@@ -33,11 +33,8 @@
       <button class="btn btn-primary" onclick="performCrop()">{{ trans('laravel-filemanager::lfm.btn-crop') }}</button>
       <button class="btn btn-info" onclick="loadItems()">{{ trans('laravel-filemanager::lfm.btn-cancel') }}</button>
       <form action="{{ route('unisharp.lfm.getCrop') }}" role='form' name='cropForm' id='cropForm' mathod='post' enctype="multipart/form-data">
-        @php
-            $nombre_imagen = array_last(explode('/', $img));
-            $fullpath = $working_dir.'/'.$nombre_imagen;
-        @endphp
-        <input type="hidden" id="img" name="img" value="{{ $img }}">
+ 
+        <input type="hidden" id="img" name="img" value="{{ parse_url($img, PHP_URL_PATH) }}">
         <input type="hidden" id="working_dir" name="working_dir" value="{{ $working_dir }}">
         <input type="hidden" id="dataX" name="dataX">
         <input type="hidden" id="dataY" name="dataY">
@@ -89,7 +86,7 @@
             dataType: "text",
             url: "{{ route('unisharp.lfm.getCropimage') }}",
             data: {
-                img: '{{ $img }}',
+                img: '{{ parse_url($img, PHP_URL_PATH) }}',
                 working_dir: $("#working_dir").val(),
                 dataX: $("#dataX").val(),
                 dataY: $("#dataY").val(),

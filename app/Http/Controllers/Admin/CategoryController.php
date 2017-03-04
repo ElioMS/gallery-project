@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Gallery;
+use App\{Category};
 
-class GalleryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        // $galleries = Gallery::has('category')->get();
-        $galleries = Gallery::all();
-        return view('admin.gallery.index' , compact('galleries'));
+        $categories = Category::whereStatus(1)->get();
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -28,7 +27,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('admin.gallery.create');
+        return view('admin.category.create');
     }
 
     /**
@@ -39,7 +38,20 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required|unique:categories',
+        ]);
+
+        Category::create([
+            'name' => request('name'),
+            'description' => request('description'),
+            'image' => request('image'),
+            'slug' => str_slug(request('name'), '-'),
+            'status' => request('status')
+        ]);
+
+        session()->flash('success' , 'Category created successful');
+        return redirect()->route('categories.index');
     }
 
     /**

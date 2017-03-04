@@ -17,10 +17,9 @@ class CreateGalleriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('description');
             $table->string('image');
-            $table->json('image_tags');
-            $table->boolean('status')->nullable();
+            $table->json('images')->nullable();
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galleries');
+        //
     }
 }

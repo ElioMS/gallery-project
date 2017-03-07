@@ -2,10 +2,9 @@
 
 @section('content')
  	<div class="titles">
-	    <h1> Galleries </h1>
-		<a href="{{ route('galleries.create') }}" type="button" class="ui blue button"> <i class="add circle icon"></i> Add new </a>
-		{{-- <button type="button" class="ui green button"> Exportar </button> --}}
-		{{-- <button type="button" class="ui yellow button"> Mostrar inactivas </button> --}}
+	    <h1> Galleries 
+	    	<a href="{{ route('galleries.create') }}" type="button" class="ui inverted right floated blue button"> <i class="add circle icon"></i> Add new </a>
+	    </h1>
   	</div>
 
   	<div class="container white">

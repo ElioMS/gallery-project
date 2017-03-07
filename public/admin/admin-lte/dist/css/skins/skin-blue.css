@@ -3,7 +3,7 @@
  * ----------
  */
 .skin-blue .main-header .navbar {
-  background-color: #00a65a;
+  background-color: #3c8dbc;
 }
 .skin-blue .main-header .navbar .nav > li > a {
   color: #ffffff;
@@ -43,7 +43,7 @@
   }
 }
 .skin-blue .main-header .logo {
-  background-color: #00a65a;
+  background-color: #367fa9;
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }

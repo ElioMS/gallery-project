@@ -9,15 +9,16 @@
         {{ Html::script('admin/jquery/jquery-ui.js') }}
         {{ Html::style('admin/jquery/jquery-ui.min.css') }}
 		{{ Html::style('admin/admin-lte/dist/css/AdminLTE.css') }}
-    	{{ Html::style('admin/admin-lte/dist/css/skins/skin-blue-light.css') }}
+        {{-- {{ Html::style('admin/admin-lte/dist/css/skins/skin-blue-light.css') }} --}}
+        {{ Html::style('admin/admin-lte/dist/css/skins/skin-blue.css') }}
         {{ Html::style('admin/css/modal.css') }}
-
+        {{ Html::style('admin/css/admin.css?v=2.1') }}
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.semanticui.min.css">
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
-<body class="hold-transition skin-blue-light sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
+{{-- <body class="hold-transition skin-blue-light sidebar-mini"> --}}
 
 	
 <div class="wrapper">
@@ -38,65 +39,7 @@
             </a>
 
             <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-
-                   {{-- Aca van los li para las notificaciones --}}
-
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('eva-01.jpg') }}" class="user-image" alt="User Image">
-                            @if (Auth::check())
-                            	<span class="hidden-xs">{{ Auth::user()->name }} </span>
-                            @endif
-                            
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="{{ asset('davemoustache.jpg') }}" class="img-circle" alt="User Image">
-
-                                <p>
-
-                                    <small>Member since Nov. 2012</small>
-                                </p>
-                            </li>
-                            <!-- Menu Body -->
-                            <li class="user-body">
-                                <div class="row">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </div>
-                                <!-- /.row -->
-                            </li>
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
-
-                                <div class="pull-right">
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST">
-                                            {{ csrf_field() }}
-                                             <button  class="btn btn-default btn-flat">Sign out</button>
-                                        </form>
-                                   
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
-                </ul>
+                @include('default.layouts.navbar')
             </div>
         </nav>
     </header>
@@ -105,7 +48,7 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
             <!-- Sidebar user panel -->
-            <div class="user-panel">
+            {{-- <div class="user-panel">
                 <div class="pull-left image">
                     <img src="{{ asset('eva-01.jpg') }}" class="img-circle" alt="User Image">
                 </div>
@@ -116,17 +59,9 @@
                     
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
-            </div>
+            </div> --}}
             <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                </div>
-            </form>
+            
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
@@ -205,6 +140,7 @@
     $(document).on('click', '.pink' ,function() {
         $("#modal-image").hide()
     });
+
 </script>
     
 @yield('scripts')

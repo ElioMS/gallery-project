@@ -12,6 +12,10 @@ class Category extends Model
     	return $this->hasMany('App\Gallery');
     }
 
+    public function getRouteKeyName() {
+    	return 'slug';
+    }
+
     public function getStatusNameAttribute() {
     	$this->status == 1 ? $name = 'ACTIVE' : 'INACTIVE';
     	return $name;

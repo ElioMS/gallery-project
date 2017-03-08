@@ -39,7 +39,26 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Array
+        $image_tags = array();
+        $images = request('images');
+        $tags   = request('tag');
+
+        foreach ($images as $key => $image) {
+            $array = array('image' => $image , 'tag' =>  $tags[$key]);
+            array_push($image_tags, $array);
+        }
+
+        $gallery = Gallery::create([
+            'name'        => request('name'),
+            'slug'        => str_slug(request('name') , '-'),
+            'description' => request('description'),
+            'image'       => request('image'),
+            'images'      => $image_tags
+        ]);
+
+        session()->flash('success', 'New Gallery '.$gallery->name.' created!');
+        return redirect()->route('galleries.index');
     }
 
     /**
@@ -82,8 +101,13 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+            $gallery = Gallery::findOrFail($id);
+            $gallery->delete();
+
+            return response()->json($gallery->id);
+        }
     }
 }

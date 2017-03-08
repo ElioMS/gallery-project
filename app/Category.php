@@ -17,7 +17,7 @@ class Category extends Model
     }
 
     public function getStatusNameAttribute() {
-    	$this->status == 1 ? $name = 'ACTIVE' : 'INACTIVE';
-    	return $name;
+    	$this->status == 1 ? $value = 'ACTIVE' : $value = 'INACTIVE';
+    	return $value;
     }
 }

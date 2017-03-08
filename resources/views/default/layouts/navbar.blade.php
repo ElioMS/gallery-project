@@ -5,9 +5,13 @@
     <!-- User Account: style can be found in dropdown.less -->
     <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ asset('eva-01.jpg') }}" class="user-image" alt="User Image">
+            <img src="{{ asset('admin/images/admin-icon.png') }}" class="user-image" alt="User Image">
             @if (Auth::check())
-            	<span class="hidden-xs">{{ Auth::user()->username }} </span>
+            	<span class="hidden-xs"> @if (!Auth::user()->username)
+                   {{ Auth::user()->name }}
+                   @else
+                   {{ Auth::user()->username }}
+                @endif </span>
             @endif
             
         </a>

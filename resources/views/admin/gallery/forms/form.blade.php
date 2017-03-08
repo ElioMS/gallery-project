@@ -33,11 +33,5 @@
 			<button class="ui active orange button" id="add-image_tags"> <i class="add square icon"></i> Add more </button>
 		</div>
 
-
-		<div class="form-group">
-			{!! Form::stdCheckbox('home', 'Put as active?') !!}
-		</div>
-
-
 </div>
 

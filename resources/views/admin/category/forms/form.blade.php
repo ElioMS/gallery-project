@@ -11,9 +11,10 @@
 			{!! $errors->first('name', '<span class="help-block"><strong> :message </strong></span>') !!}
 		</div>
 
-		<div class="form-group">
+		<div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
 			{!! Form::label('description') !!}
 			{!! Form::textarea('description', null , ['class' => 'ckeditor']) !!}
+			{!! $errors->first('description', '<span class="help-block"><strong> :message </strong></span>') !!}
 		</div>
 
 		<div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">

@@ -6,7 +6,7 @@
     @include('admin.category.forms.form')
 {!! Form::close() !!}
 
-<div class="container">
+<div class="container white">
   <div class="col-md-12">
       <button type="button" id="submit-btn" class="ui primary button"> Crear </button>
       <a href="{{ route('categories.index') }}" class="ui red button"> Volver </a>

@@ -16,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::whereStatus(1)->get();
+        // $categories = Category::whereStatus(1)->get();
+        $categories = Category::All();
         return view('admin.category.index', compact('categories'));
     }
 
@@ -40,6 +41,8 @@ class CategoryController extends Controller
     {
         $this->validate(request(), [
             'name' => 'required|unique:categories',
+            'description' => 'required',
+            'image' => 'required'
         ]);
 
         Category::create([
@@ -85,7 +88,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->fill($request->all());
+        $category->save();
+
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -94,8 +101,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        if ($request->ajax()) {
+            $category = Category::find($id);
+            $category->delete();
+
+            return response()->json($category->id);
+        }
     }
 }

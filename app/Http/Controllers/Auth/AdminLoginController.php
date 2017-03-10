@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class AdminLoginController extends Controller
 {
 	public function __construct() {
-		$this->middleware('guest');
+		$this->middleware('guest:admin');
 	}
 
     public function showLoginForm() {
@@ -29,8 +29,8 @@ class AdminLoginController extends Controller
 
     	// Attemp to log the user in admin model
     	if (\Auth::guard('admin')->attempt($credentials, request('remember'))) {
-    		// if successful, the redirect to the panel
-    		return redirect()->route('admin.panel');
+    		// if successful, redirect to the admin panel
+    		return redirect()->intended(route('admin.panel'));
     	}
     	
     	// if unsuccesful redirect back 

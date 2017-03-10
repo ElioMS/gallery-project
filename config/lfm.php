@@ -12,7 +12,7 @@ return [
 
     // Middlewares which should be applied to all package routes.
     // For laravel 5.1 and before, remove 'web' from the array.
-    'middlewares' => ['web','auth'],
+    'middlewares' => ['web','auth:admin'],
 
     // The url to this package. Change it if necessary.
     'prefix' => 'laravel-filemanager',
@@ -54,7 +54,7 @@ return [
 
     // The default display type for items.
     // Supported: "grid", "list"
-    'images_startup_view' => 'grid',
+    'images_startup_view' => 'list',
     'files_startup_view' => 'list',
 
     /*

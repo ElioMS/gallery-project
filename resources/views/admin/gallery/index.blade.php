@@ -15,6 +15,7 @@
 			<thead>
 				<th> Image </th>
 				<th> Name </th>
+				<th> Category </th>
 				<th> </th>
 			</thead>
 
@@ -27,6 +28,7 @@
 						 	</a>
 						</td>
 						<td> {{ $gallery->name }} </td>
+						<td> <strong> {{ $gallery->category->name }} </strong>  </td>
 						<td> <button type="button" class="ui tiny red button eliminar-elemento"  data-toggle="modal" data-target="#delete-modal"> <i class="fa fa-trash"></i> </button></td>
 					</tr>
 				@endforeach

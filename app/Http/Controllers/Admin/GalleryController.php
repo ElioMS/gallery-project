@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Gallery;
+use App\{Gallery, Category};
 
 class GalleryController extends Controller
 {
@@ -16,8 +16,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        // $galleries = Gallery::has('category')->get();
-        $galleries = Gallery::all();
+        $galleries = Gallery::whereHas('category' , function($query) {
+            $query->whereStatus(1);
+        })->get();
+
         return view('admin.gallery.index' , compact('galleries'));
     }
 
@@ -28,7 +30,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('admin.gallery.create');
+        $categories = Category::pluck('name', 'id');
+        return view('admin.gallery.create' , compact('categories'));
     }
 
     /**
@@ -50,11 +53,12 @@ class GalleryController extends Controller
         }
 
         $gallery = Gallery::create([
+            'category_id' => request('category_id'),
             'name'        => request('name'),
             'slug'        => str_slug(request('name') , '-'),
             'description' => request('description'),
             'image'       => request('image'),
-            'images'      => $image_tags
+            'image_tags'  => $image_tags
         ]);
 
         session()->flash('success', 'New Gallery '.$gallery->name.' created!');
@@ -78,9 +82,10 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Gallery $gallery)
     {
-        //
+        $categories = Category::pluck('name', 'id');
+        return view('admin.gallery.edit', compact('gallery', 'categories'));
     }
 
     /**

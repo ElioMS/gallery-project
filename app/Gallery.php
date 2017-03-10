@@ -9,10 +9,15 @@ class Gallery extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-    	'images' => 'array'
+    	'image_tags' => 'array'
     ];
-    // public function category() {
-    // 	return $this->belongsTo('App/Category');
-    // }
+
+    public function getRouteKeyName() {
+    	return 'slug';
+    }
+    
+    public function category() {
+    	return $this->belongsTo('App\Category');
+    }
 
 }

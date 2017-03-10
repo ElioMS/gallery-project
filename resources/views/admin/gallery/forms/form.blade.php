@@ -5,6 +5,11 @@
   	</h2>
   	<div class="ui divider"></div>
 
+  		<div class="form-group">
+  			{!! Form::label('Category') !!}
+  			{!! Form::select('category_id', $categories , null , ['class' => 'form-control']) !!}
+  		</div>
+
 		<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 			{!! Form::label('name') !!}
 			{!! Form::text('name', null , ['class' => 'form-control', 'placeholder' => 'Gallery name']) !!}

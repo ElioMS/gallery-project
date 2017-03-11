@@ -12,18 +12,18 @@ class AdminLoginController extends Controller
 	}
 
     public function showLoginForm() {
-    	return view('auth.adminLogin');
+    	return view('auth.loginAdmin');
     }
 
     public function login() {
     	// Validate the form data
     	$this->validate(request() , [
-    		'email' => 'required|email',
+    		'username' => 'required|exists:admins',
     		'password' => 'required'
     	]);
 
     	$credentials = [
-    		'email' => request('email'),
+    		'username' => request('username'),
     		'password' => request('password')
     	];
 

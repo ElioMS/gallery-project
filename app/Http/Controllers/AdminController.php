@@ -11,7 +11,7 @@ class AdminController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function dashboard() {
+    public function __invoke() {
     	return view('default.panel');
     }
 }

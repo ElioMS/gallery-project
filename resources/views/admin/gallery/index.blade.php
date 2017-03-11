@@ -11,7 +11,7 @@
 
   	<div class="container white">
 
-        <table id="myTable" class="ui celled table">
+        <table id="myTable" class="ui very basic table">
 			<thead>
 				<th> Image </th>
 				<th> Name </th>

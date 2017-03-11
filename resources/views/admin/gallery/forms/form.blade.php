@@ -23,7 +23,7 @@
 
 		<div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
 			@if (isset($gallery))
-				{!! Form::imagen('image', $gallery->imagen) !!}
+				{!! Form::imagen('image', $gallery->image) !!}
 			@else
 				{!! Form::imagen('image') !!}
 			@endif
@@ -31,6 +31,12 @@
 		</div>
 
 		<div class="form-group">
+			@if (isset($gallery))
+				@foreach ($gallery->image_tags as $element)
+					{!! Form::imageText($loop->index, $element['image'], $element['tag'] ) !!}
+				@endforeach
+				
+			@endif
 			<div id="div-image_tags">
 				
 			</div>

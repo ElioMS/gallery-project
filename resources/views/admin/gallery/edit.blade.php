@@ -14,3 +14,14 @@
 </div>
   
 @endsection
+
+@section('scripts')
+	<script type="text/javascript">
+		$("#add-image_tags").on('click', function(e){
+			e.preventDefault();
+			var count = $('.it-image').length
+			var imageTags = '{!! Form::imageText("'+count+'", null) !!}';
+			$('#div-image_tags').append(imageTags)
+		});
+	</script>
+@stop

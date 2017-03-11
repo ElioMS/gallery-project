@@ -65,7 +65,7 @@ class MacroServiceProvider extends ServiceProvider
             return $checkbox;
         });
 
-        \Form::macro('imageText', function($count, $path = null){
+        \Form::macro('imageText', function($count, $path = null, $tag = null){
             $image_name = '';
             $name  = 'image'.$count;
 
@@ -89,7 +89,7 @@ class MacroServiceProvider extends ServiceProvider
             $imagen .= '</div>';
             $imagen .= '<br>';
             $imagen  .= \Form::label('tag');
-            $imagen  .= \Form::text('tag[]' , null , ['class' => 'form-control'] );
+            $imagen  .= \Form::text('tag[]' , $tag , ['class' => 'form-control'] );
 
             $imagen .= '</div>';
             $imagen .= '</div>';

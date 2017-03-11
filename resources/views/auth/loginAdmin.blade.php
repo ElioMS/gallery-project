@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title> Admin | Login</title>
 	{{ Html::style('admin/css/admin.css?v=2.1') }}
 	{{ Html::style('admin/semantic/semantic.min.css') }}
 </head>

@@ -27,6 +27,8 @@ Route::group(['prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['a
 	Route::resource('categories' , 'CategoryController');
 	Route::resource('galleries' , 'GalleryController');
 
+	Route::get('contact' , 'ContactController@index')->name('admin.contact.index');
+	Route::get('/export-contacts' , 'ContactController@export')->name('admin.export.contacts');
 });
 
 

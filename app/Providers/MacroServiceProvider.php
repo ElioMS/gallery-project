@@ -28,7 +28,7 @@ class MacroServiceProvider extends ServiceProvider
 
             if ($path)  $nombre_imagen = array_last(explode('/', $path));
             
-            $imagen = '<label> Imagen </label>';
+            $imagen  = '<label> Imagen </label>';
             $imagen .= '<div class="imagen-array">';
             $imagen .= '<p class="title-image-flm">'.$nombre_imagen.'</p>';
             $imagen .= '<div class="ui fluid left action input">';
@@ -44,7 +44,7 @@ class MacroServiceProvider extends ServiceProvider
         });
 
         \Form::macro('datePicker' , function($name){
-            $datepicker = '<div class="row">';
+            $datepicker  = '<div class="row">';
             $datepicker .= '<div class="col-lg-3">';
             $datepicker .= \Form::label($name);
             $datepicker .= '<div class="input-group">';
@@ -93,8 +93,6 @@ class MacroServiceProvider extends ServiceProvider
 
             $imagen .= '</div>';
             $imagen .= '</div>';
-
-
 
             return $imagen;
         });

@@ -18,6 +18,13 @@ return[
 
         [
             'type' => 'simple',
+            'text' => 'News',
+            'url'  => 'news.index',
+            'ico'  => 'fa fa-newspaper-o'
+        ],
+
+        [
+            'type' => 'simple',
             'text' => 'Contact',
             'url'  => 'admin.contact.index',
             'ico'  => 'fa fa-envelope'

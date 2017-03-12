@@ -29,6 +29,8 @@ Route::group(['prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => ['a
 
 	Route::get('contact' , 'ContactController@index')->name('admin.contact.index');
 	Route::get('/export-contacts' , 'ContactController@export')->name('admin.export.contacts');
+
+	Route::resource('news' , 'NewsController');
 });
 
 

@@ -44,7 +44,6 @@
 	position: relative;
 	width: 100%;
   	height: 100%;
-  	// z-index: -1;
 }
 
 .middle {
@@ -55,4 +54,8 @@
     height:18em;
     margin-top: -15em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+
+.ui-datepicker-trigger {
+    display: none;
 }

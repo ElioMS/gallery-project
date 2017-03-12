@@ -7,8 +7,6 @@
 	    </h1>
   	</div>
 
-  	@include('default.alerts.success')
-
   	<div class="container white">
 
         <table id="myTable" class="ui very basic table">

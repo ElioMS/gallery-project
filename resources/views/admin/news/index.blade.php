@@ -1,13 +1,14 @@
 @extends('default.panel')
 
+
 @section('content')
 
  	<div class="titles">
-	    <h1> Categories 
-	    	<a href="{{ route('categories.create') }}" type="button" class="ui inverted right floated blue button"> 
+	    <h2 class="ui inverted header"> News 
+	    	<a href="{{ route('news.create') }}" type="button" class="ui inverted right floated blue button"> 
 	    		<i class="add circle icon"></i> Add new 
 	    	</a>
-	    </h1>
+	    </h2>
   	</div>
 
   	<div class="container white">
@@ -16,16 +17,16 @@
 			<thead>
 				<th> Image </th>
 				<th> Name </th>
-				<th> Status </th>
+				<th> Date </th>
 				<th> </th>
 			</thead>
 
 			<tbody>
-				@foreach ($categories as $category)
-					<tr class="table-rows" data-id="{{ $category->id }}">
-						<td> <a href="{{ route('categories.edit', ['slug' => $category->slug]) }}"> <img src="{{ asset($category->image) }}" width="100" height="100"> </a></td>
-						<td> {{ $category->name }} </td>
-						<td> <span class="ui @if ($category->status == 1) green @else red @endif  basic label"> {{ $category->statusname }} </span></td>
+				@foreach ($news as $item)
+					<tr class="table-rows" data-id="{{ $item->id }}">
+						<td> <a href="{{ route('news.edit', ['slug' => $item->slug]) }}"> <img src="{{ asset($item->image) }}"> </a></td>
+						<td> {{ $item->title }} </td>
+						<td> {{ $item->date->format('d-m-Y') }} </td>
 						<td> 
 						<button type="button" class="ui tiny red button eliminar-elemento"  data-toggle="modal" data-target="#delete-modal"> <i class="fa fa-trash"></i> </button>
 						</td>
@@ -38,7 +39,7 @@
 @stop
 
 @include('default.layouts.delete')
-{{ Form::open(['route' => ['categories.destroy' , ':c_id'] , 'method' => 'DELETE', 'id' => 'form-delete']) }}
+{{ Form::open(['route' => ['news.destroy' , ':c_id'] , 'method' => 'DELETE', 'id' => 'form-delete']) }}
 {{ Form::close() }}
 
 @section('scripts')

@@ -1,5 +1,15 @@
+<style type="text/css">
+	.popup {
+		right: 15;
+		position: absolute; 
+		z-index: 9999;
+	}
+</style>
+
 @if ($message = session('success'))
-<div class="alert alert-success" role="alert" style="z-index: 9999999;">
-    <h4> <i class="fa fa-check-circle"></i> {{ $message }} </h4>  
+<div class="popup">
+ 	<div class="alert alert-success">
+  		<strong> {{ $message }}</strong> .
+	</div>
 </div>
 @endif

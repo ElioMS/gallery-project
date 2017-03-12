@@ -47,23 +47,7 @@
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-            <!-- Sidebar user panel -->
-            {{-- <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{{ asset('eva-01.jpg') }}" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                @if (Auth::check())
-                	<p>{{ Auth::user()->name }} </p>
-                @endif
-                    
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div> --}}
-            <!-- search form -->
-            
-            <!-- /.search form -->
-            <!-- sidebar menu: : style can be found in sidebar.less -->
+
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
 
@@ -78,6 +62,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+
         <h3 class="ui block header">
           Admin panel 
         </h3>
@@ -90,7 +75,7 @@
                 <li class="active">Dashboard</li>
             </ol> --}}
         </section>
-       
+        @include('default.alerts.success')
         <!-- Main content -->
         <section class="content">
           

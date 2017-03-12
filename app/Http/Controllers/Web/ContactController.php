@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Contact;
+use App\Mail\ContactForm;
 
 class ContactController extends Controller
 {
@@ -38,7 +39,9 @@ class ContactController extends Controller
                 'message' => request('message')
             ]);
 
-            if ($contact) return response()->json(true);
+            \Mail::to('elio.garcia.solis@gmail.com')->send(new ContactForm($contact)); 
+
+            return response()->json(true);
             
         }
     }

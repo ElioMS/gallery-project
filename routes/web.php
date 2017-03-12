@@ -19,4 +19,5 @@ Route::get('/' , function () {
 
 Route::group(['namespace' => 'Web'] , function () {
 	Route::resource('contact' , 'ContactController', ['only' => ['index' , 'store']] );
+	Route::get('/gallery/{category}/{gallery?}/', 'GalleryController@index')->name('web.galleries.index');
 });

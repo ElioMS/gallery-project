@@ -89,7 +89,7 @@
 						console.log(response)
 					},
 					error : function (xhr , status , error) {
-						console.log(status , error)
+						console.log(xhr.responseText)
 					}
 				});
 			})

@@ -3,6 +3,7 @@
 <head>
 	<title> Home </title>
 	{{ Html::style('admin/semantic/semantic.min.css') }}
+	{{ Html::style('css/web.css') }}
 	{{ Html::script('admin/jquery/jquery-3.1.1.min.js') }}
 </head>
 
@@ -19,15 +20,15 @@
 	}
 	.main-text {
 		padding-top: 5%;
-		padding-left: 5%;
-		padding-right: 5%;
+		/*padding-left: 5%;
+		padding-right: 5%;*/
 		padding-bottom: 5%;
 	}
 </style>
 <body>
 	@include('web.layouts.header')
 
-		<div class="container main-text">
+		<div class="ui container main-text">
 			@yield('content')
 		</div>
 			

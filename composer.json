@@ -1,5 +1,5 @@
 {
-    "name": "laravel/laravel",
+    "name": "Base Laravel EMS",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",

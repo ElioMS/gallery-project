@@ -55,7 +55,6 @@ class GalleryController extends Controller
         $gallery = Gallery::create([
             'category_id' => request('category_id'),
             'name'        => request('name'),
-            'slug'        => str_slug(request('name') , '-'),
             'description' => request('description'),
             'image'       => request('image'),
             'image_tags'  => $image_tags
@@ -97,7 +96,26 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $gallery = Gallery::find($id);
+
+        $image_tags = array();
+        $images = request('images');
+        $tags   = request('tag');
+
+        foreach ($images as $key => $image) {
+            $array = array('image' => $image , 'tag' =>  $tags[$key]);
+            array_push($image_tags, $array);
+        }
+
+        $gallery->category_id = request('category_id');
+        $gallery->name = request('name');
+        $gallery->description = request('description');
+        $gallery->image = request('image');
+        $gallery->image_tags = $image_tags;
+        $gallery->save();
+
+        session()->flash('success' , 'Gallery '. $gallery->name .' edited!');
+        return redirect()->route('galleries.index');
     }
 
     /**

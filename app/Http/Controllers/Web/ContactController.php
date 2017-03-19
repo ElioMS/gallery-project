@@ -16,7 +16,10 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $app = config('app.name');
+        \MetaTag::set('title',  $app.' | Contact');
+        
         return view('web.contact.index');
     }
 

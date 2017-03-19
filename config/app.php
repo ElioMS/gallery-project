@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Base Laravel',
 
     'infosite' => 'localhost:8000',
     /*
@@ -184,7 +184,7 @@ return [
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
+        Torann\LaravelMetaTags\MetaTagsServiceProvider::class,
 
     ],
 
@@ -238,6 +238,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'MetaTag'   => Torann\LaravelMetaTags\Facades\MetaTag::class,
     ],
 
 ];

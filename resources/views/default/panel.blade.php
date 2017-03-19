@@ -17,6 +17,13 @@
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+<style type="text/css">
+    .main-header , .main-sidebar {
+        font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    }
+
+</style>
 <body class="hold-transition skin-blue sidebar-mini">
 {{-- <body class="hold-transition skin-blue-light sidebar-mini"> --}}
 

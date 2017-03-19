@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Home </title>
+	@include('web.layouts.metatag')
 	{{ Html::style('admin/semantic/semantic.min.css') }}
 	{{ Html::style('css/web.css') }}
 	{{ Html::script('admin/jquery/jquery-3.1.1.min.js') }}

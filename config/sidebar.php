@@ -1,6 +1,7 @@
 <?php 
 	
 return[
+
 	'menu' => [
    		[
             'type' => 'simple',
@@ -28,7 +29,30 @@ return[
             'text' => 'Contact',
             'url'  => 'admin.contact.index',
             'ico'  => 'fa fa-envelope'
-        ]
+        ],
+
+        [
+         'type' => 'tree',
+         'text' => 'Productos',
+         'ico'  => 'fa fa-shopping-basket',
+         'childs' => [
+
+                [
+                  'text' => 'Categories',
+                  'url' => 'categories.index'
+                ],
+
+                [
+                  'text' => 'Subcategories',
+                  'url' => 'categories.index'
+                ],
+
+                [
+                  'text' => 'Products',
+                  'url' => 'categories.index'
+                ],
+            ]
+        ],
 	]
 ]
 ?>

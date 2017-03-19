@@ -16,12 +16,17 @@ class GalleryController extends Controller
     		$query->whereSlug($slug);
     	})->get();
 
+         \MetaTag::set('title', 'Category | '.$category->name);
+
     	if ($slug2) {
     		$gallery = Gallery::whereSlug($slug2)->first();
             $related = Gallery::whereHas('category', function($query) use ($slug , $slug2) {
                 $query->whereSlug($slug);
             })->where('slug', '!=' , $slug2)->get();
 
+            \MetaTag::set('title', 'Gallery | '.$gallery->name);
+            \MetaTag::set('description', $gallery->description);
+            
     		return view('web.gallery.show', compact('gallery', 'related'));
     	}
 

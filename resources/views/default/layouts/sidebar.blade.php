@@ -13,13 +13,13 @@
             <a href="{{ route($element['url']) }}"><i class="{{ $element['ico'] }}"></i> <span> {{ $element['text'] }} </span></a>
         </li> 
     @else
-        <li class="treeview">
+        <li class="treeview active">
             <a href="#">
                 <i class="{{ $element['ico'] }}"></i> <span> {{ $element['text'] }} </span>
             </a>
             <ul class="treeview-menu">
                 @foreach ($element['childs'] as $e)
-                    <li><a href="{{ route($e['url']) }}"><i class="fa fa-circle-o text-aqua"></i> {{ $e['text'] }} </a></li>
+                    <li class="sb-links active"><a href="{{ route($e['url']) }}"><i class="fa fa-circle-o text-aqua"></i> {{ $e['text'] }} </a></li>
                 @endforeach
             </ul>
         </li>

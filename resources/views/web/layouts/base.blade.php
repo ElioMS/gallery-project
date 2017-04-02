@@ -26,6 +26,15 @@
 	}
 </style>
 <body>
+	@php
+	    use App\Http\Controllers\General\SeoController;
+		$site = config('app.infosite');
+		$full_url = url()->current();
+		$path = str_replace($site , '', $full_url);
+
+		$result = SeoController::checkIfRouteExists($path);
+	@endphp
+
 	@include('web.layouts.header')
 
 		<div class="ui container main-text">

@@ -14,7 +14,7 @@ return [
 
     'name' => 'Base Laravel',
 
-    'infosite' => 'localhost:8000',
+    'infosite' => 'http://gallery.app',
     /*
     |--------------------------------------------------------------------------
     | Application Environment

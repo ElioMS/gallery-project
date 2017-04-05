@@ -21,6 +21,10 @@ Route::get('/vue/', function () {
 	return view('vue');
 });
 
+Route::get('/popup/' , function() {
+	return view('index');
+});
+
 Route::get('/some/{param}/', 'HomeController@randomRoute');
 
 Route::get('/vue/components/', function () {

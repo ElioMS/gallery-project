@@ -19,7 +19,7 @@ class CreateGalleriesTable extends Migration
             $table->string('slug')->unique();
             $table->text('description');
             $table->string('image');
-            $table->json('image_tags')->nullable();
+            // $table->json('image_tags')->nullable();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

@@ -1,3 +1,10 @@
+<style>
+	.ui.popup .content{
+		min-height: auto !important;
+		padding: 0px !important;
+	}
+</style>
+
 <div class="ui blue segment">
 	<h2 class="ui blue header">
 	    <strong><i> Create and edit </i></strong>
@@ -29,5 +36,14 @@
 		<div class="form-group">
 			{!! Form::stdCheckbox('status', 'Put as active?') !!}
 		</div>
+
+		<input type="text" data-content="Add users to your feed" data-inverted="" >
+
+		<div data-tooltip="Add users to your feed" data-inverted="">
+			<input type="text"  >
+		</div>
+		
+		<button data-tooltip="Add users to your feed" data-inverted=""> aaa </button>
+		
 
 </div>

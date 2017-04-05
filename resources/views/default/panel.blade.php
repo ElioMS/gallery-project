@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title> Admin Panel </title>
-        
-		{{ Html::style('admin/bootstrap/css/bootstrap.min.css') }}
-		{{ Html::style('admin/semantic/semantic.min.css') }}
+    {{ Html::style('admin/bootstrap/css/bootstrap.min.css') }}
+        {{ Html::style('admin/semantic/semantic.min.css') }}
+		
+		
 		{{ Html::script('admin/jquery/jquery-3.1.1.min.js') }}
         {{ Html::script('admin/jquery/jquery-ui.js') }}
         {{ Html::style('admin/jquery/jquery-ui.min.css') }}
@@ -105,9 +106,9 @@
 </div>
 
 </body>
-
-    {!! Html::script('admin/bootstrap/js/bootstrap.min.js') !!}
     {!! Html::script('admin/semantic/semantic.js') !!}
+    {!! Html::script('admin/bootstrap/js/bootstrap.min.js') !!}
+    
     {!! Html::script('admin/admin-lte/dist/js/app.min.js') !!}
     {!! Html::script('admin/utils/ckeditor/ckeditor.js') !!}
 

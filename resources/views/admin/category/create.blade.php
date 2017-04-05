@@ -16,5 +16,12 @@
 @endsection
 
 @section('scripts')
-
+	<script>
+		// $('input')
+		//   .popup({
+		//     on: 'hover',
+		//     inline: true
+		//   })
+		// ;
+	</script>
 @endsection

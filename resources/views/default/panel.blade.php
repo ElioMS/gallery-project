@@ -14,6 +14,7 @@
         {{ Html::style('admin/admin-lte/dist/css/skins/skin-blue.css') }}
         {{ Html::style('admin/css/modal.css') }}
         {{ Html::style('admin/css/admin.css?v=2.1') }}
+         
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.semanticui.min.css">
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

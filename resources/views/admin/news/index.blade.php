@@ -1,19 +1,19 @@
-@extends('default.panel')
-
+@extends('default.metronic')
 
 @section('content')
 
- 	<div class="titles">
-	    <h2 class="ui inverted header"> News 
-	    	<a href="{{ route('news.create') }}" type="button" class="ui inverted right floated blue button"> 
-	    		<i class="add circle icon"></i> Add new 
+<div class="portlet box blue-hoki">
+	<div class="portlet-title">
+	    <h2 class="page-header"> News 
+	    	<a href="{{ route('news.create') }}" type="button" class="btn btn-info pull-right"> 
+	    		 Add new <i class="fa fa-plus-circle"></i>
 	    	</a>
 	    </h2>
   	</div>
 
-  	<div class="container white">
+  	<div class="portlet-body">
 
-        <table id="myTable" class="ui blue celled table">
+        <table id="myTable" class="table table-bordered table-hover">
 			<thead>
 				<th> Image </th>
 				<th> Name </th>
@@ -24,11 +24,11 @@
 			<tbody>
 				@foreach ($news as $item)
 					<tr class="table-rows" data-id="{{ $item->id }}">
-						<td> <a href="{{ route('news.edit', ['slug' => $item->slug]) }}"> <img src="{{ asset($item->image) }}"> </a></td>
+						<td> <a href="{{ route('news.edit', ['slug' => $item->slug]) }}"> <img src="{{ asset($item->image) }}" width="100" height="100"> </a></td>
 						<td> {{ $item->title }} </td>
 						<td> {{ $item->date->format('d-m-Y') }} </td>
 						<td> 
-						<button type="button" class="ui tiny red button eliminar-elemento"  data-toggle="modal" data-target="#delete-modal"> <i class="fa fa-trash"></i> </button>
+						<button type="button" class="btn btn-danger"  data-toggle="modal" data-target="#delete-modal"> <i class="fa fa-trash"></i> </button>
 						</td>
 					</tr>
 				@endforeach
@@ -36,6 +36,10 @@
         </table>
 
     </div>
+</div>
+ 	
+
+  	
 @stop
 
 @include('default.layouts.delete')

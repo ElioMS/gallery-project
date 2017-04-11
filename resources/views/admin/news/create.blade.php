@@ -1,4 +1,4 @@
-@extends('default.panel')
+@extends('default.metronic')
 
 @section('content')
 

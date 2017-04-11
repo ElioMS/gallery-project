@@ -27,7 +27,7 @@ return[
         [
             'type' => 'simple',
             'text' => 'Contact',
-            'url'  => 'admin.contact.index',
+            'url'  => 'contact.index',
             'ico'  => 'fa fa-envelope'
         ],
 
@@ -39,17 +39,20 @@ return[
 
                 [
                   'text' => 'Categories',
-                  'url' => 'categories.index'
+                  'url' => 'categories.index',
+                  'ico' => 'fa fa-groups'
                 ],
 
                 [
                   'text' => 'Subcategories',
-                  'url' => 'categories.index'
+                  'url' => 'categories.index',
+                  'ico' => 'fa fa-home'
                 ],
 
                 [
                   'text' => 'Products',
-                  'url' => 'categories.index'
+                  'url' => 'categories.index',
+                  'ico' => 'fa fa-envelope'
                 ],
             ]
         ],

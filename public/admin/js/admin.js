@@ -15,6 +15,11 @@ $("#submit-btn").on('click' , function(){
   $("#general-form").submit();
 });
 
+//Cerrar modal
+$("#modal-regresar").on('click', function() {
+    $("#modal-image").hide();
+});
+
 //Datepicker todas los campos de fecha con la clase .input-fecha
 $('.input-fecha').datepicker({
       showOn: "button",
@@ -29,6 +34,5 @@ $(".date-button-adm").on('click', function(e){
 });
 
 
-$('.checkbox').checkbox();
 
 			

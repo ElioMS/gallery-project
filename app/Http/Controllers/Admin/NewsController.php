@@ -41,6 +41,12 @@ class NewsController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate(request(), [
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required'
+        ]);
+
         $date = Carbon::createFromFormat('d/m/Y' , request('date'));
 
         News::create([

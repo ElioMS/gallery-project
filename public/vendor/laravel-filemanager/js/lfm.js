@@ -43,7 +43,7 @@ function SetUrl(url, file_path){
         target_input.closest(".ui.fluid").find('.preview-flm').data('name', file_path)
       }else{
         target_input.closest(".imagen-array").find('.title-image-flm').text(image_value)
-        target_input.closest(".ui.fluid").append('<a class="ui button preview-flm" data-name="'+file_path+'">Preview</a>')
+        target_input.closest(".ui.fluid").append('<a class="btn default preview-flm" data-name="'+file_path+'">Preview</a>')
       }
 
   }else{

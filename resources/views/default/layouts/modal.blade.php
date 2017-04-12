@@ -2,6 +2,6 @@
       <div class="center">
           <img class="size" src="">
           <br>
-          <a class="tiny ui pink button" id="a-regresar"> Regresar </a>
+          <a class="btn green" id="modal-regresar"> Regresar </a>
       </div> 
 </div>

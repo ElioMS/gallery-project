@@ -5,7 +5,7 @@
 <div class="portlet box blue-hoki">
 	<div class="portlet-title">
 	    <h2 class="page-header"> News 
-	    	<a href="{{ route('news.create') }}" type="button" class="btn btn-info pull-right"> 
+	    	<a href="{{ route('news.create') }}" type="button" class="btn btn-circle btn-info pull-right"> 
 	    		 Add new <i class="fa fa-plus-circle"></i>
 	    	</a>
 	    </h2>

@@ -575,6 +575,8 @@
 {!! Html::script('admin/metronic/scripts/layout.js') !!}
 {!! Html::script('admin/metronic/scripts/demo.js') !!}
 
+{!! Html::script('admin/utils/ckeditor/ckeditor.js') !!}
+
 <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 

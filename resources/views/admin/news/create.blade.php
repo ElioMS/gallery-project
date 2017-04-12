@@ -8,8 +8,8 @@
 
 <div class="container white">
   <div class="col-md-12">
-      <button type="button" id="submit-btn" class="ui primary button"> Crear </button>
-      <a href="{{ route('news.index') }}" class="ui red button"> Volver </a>
+      <button type="button" id="submit-btn" class="btn btn-primary"> Crear </button>
+      <a href="{{ route('news.index') }}" class="btn btn-danger"> Volver </a>
   </div>
 </div>
 
